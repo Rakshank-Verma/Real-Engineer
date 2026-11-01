@@ -45,13 +45,18 @@ export default function ArchitectureAnimation() {
 
   return (
     <svg
-      className="arch"
+      className="block h-auto w-full"
       viewBox="0 0 640 420"
       role="img"
       aria-label="Animated diagram: a client sends requests to a load balancer, which distributes them across three servers that read from a cache and a database."
     >
       {edges.map((e, i) => (
-        <path key={i} id={`edge-${i}`} d={e.d} className="arch-edge" />
+        <path
+          key={i}
+          id={`edge-${i}`}
+          d={e.d}
+          className="fill-none stroke-ink stroke-opacity-[0.35] stroke-[1.75]"
+        />
       ))}
 
       {nodes.map((n) => (
@@ -60,13 +65,21 @@ export default function ArchitectureAnimation() {
             width={W}
             height={H}
             rx="8"
-            className={n.primary ? "arch-node arch-node--primary" : "arch-node"}
+            className={
+              n.primary
+                ? "fill-ink stroke-ink stroke-[1.75]"
+                : "fill-white stroke-ink stroke-[1.75]"
+            }
           />
           <text
             x={W / 2}
             y={H / 2 + 4.5}
             textAnchor="middle"
-            className={n.primary ? "arch-label arch-label--primary" : "arch-label"}
+            className={
+              n.primary
+                ? "fill-white font-body text-[13px] font-semibold"
+                : "fill-ink font-body text-[13px] font-semibold"
+            }
           >
             {n.label}
           </text>
@@ -75,7 +88,12 @@ export default function ArchitectureAnimation() {
 
       {!reduced &&
         edges.map((e, i) => (
-          <circle key={i} r="5" className="arch-packet" opacity="0">
+          <circle
+            key={i}
+            r="5"
+            className="fill-amber stroke-ink stroke-[1.5]"
+            opacity="0"
+          >
             <animateMotion
               dur={`${LOOP}s`}
               begin={`${e.begin}s`}
