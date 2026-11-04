@@ -1,19 +1,22 @@
-# System Design, Animated
+# Real Engineer
 
-React + Vite + React Router + Framer Motion.
-Tailwind CSS is used for component styling.
+A welcoming starting point for learning the ideas behind great software:
+system design, data structures and algorithms, computer networks, machine
+learning, and deep learning.
 
 ## Run it
 
-    npm install
-    npm run dev
+```sh
+npm install
+npm run dev
+```
 
 Open the URL Vite prints (usually http://localhost:5173).
 
 ## Structure
 
-- `src/pages/` – one file per page (Landing, NotFound, later: topic pages)
-- `src/components/` – reusable pieces (PageTransition, ArchitectureAnimation, ...)
-- `src/data/topics.js` – registry of learning topics (empty for now)
-- `src/styles/global.css` – Tailwind directives and global page background
-- `tailwind.config.js` – theme colors, fonts, and animation
+- `src/pages/` – page components, including the landing page
+- `src/components/` – reusable UI and animation components
+- `src/data/topics.js` – registry for future topic lessons
+- `src/styles/global.css` – global styles and responsive landing-page styling
+- `index.html` – document metadata and font loading
